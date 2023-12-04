@@ -1,0 +1,191 @@
+
+.header {
+    display: flex;
+    height: 91px;
+    border: solid 1px  #E5E6E6;
+    align-items: center;
+    padding-inline: 60px 40px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;  
+    z-index: 2;
+    background: #F3F3F3;
+
+    & h1 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        color: #011602;
+    }
+}
+
+
+
+.header .hoveringCircle {
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;  
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: #EA6664;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.header > div:first-child{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header > div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 290px;
+    margin-inline-start: 13px;
+    margin-inline-end: 10px;
+
+    & span{
+        color: #67686D;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+
+.header .pill {
+    align-items: center;
+    display: flex;
+    width: 64px;
+    height: 35px;
+    border-radius: 15.867px;
+    background: #E5E6E6;
+    justify-content: space-around;
+}
+
+.header .pill > div {
+    border-radius: 13.147px;
+    border: 0.193px solid #A7A7A9;
+    width: 29px;
+    height: 29px;
+}
+
+
+
+.mainSideBarItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 95px;
+    margin-inline-start: 8px;
+    margin-block-end: 20px;
+}
+
+aside .sideBarSub {
+    position: sticky;
+    top: 0;
+    padding-block-start: 24px;
+
+}
+
+aside > div > div:not(.mainSideBarItem) {
+    border-bottom: solid 1px #E5E6E6;
+    margin-block: 10px;
+}
+
+aside > div > div:last-child{
+    border-bottom: none;
+}
+
+
+.sideBar {
+    display: block; 
+}
+
+.drawSideBar {
+    display: none; 
+}
+
+.main {
+    min-height: 100vh;
+    grid-template-columns: 233px 1fr;
+    display: grid; 
+    gap: 0px; 
+    padding: 0px;
+}
+
+
+.harmbugger {
+    display: none;
+    width: 25px;
+    height: 25px;
+}
+
+.drawer {
+    display: none;
+}
+
+.ciipmlogo {
+    width: 32px;
+    height: 32px;
+    background-image: url(../../svg/ciipmlogo.svg);
+}
+
+
+@media (max-width: 768px){
+    .harmbugger {
+        display: inline;
+        cursor: pointer;
+    }
+
+    .sideBar {
+        display: none; 
+    }
+
+    .drawSideBar {
+        display: block; 
+    }
+
+    .header{
+        height: 74px;
+        padding-inline: 15px 15px;
+        &  h1 {
+            padding-inline-start: 30px;
+        }
+    }
+
+    aside .sideBarSub {
+        padding-block-start: 5px;
+    
+    }
+
+    .main {
+        display: block;
+    }
+
+    .mainSideBarItem {
+        margin-block-end: 0px;
+    }
+
+    .drawer {
+        display: block;
+
+    }
+}
+
+
+
+
+
+
+
+

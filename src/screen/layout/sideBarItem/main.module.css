@@ -1,0 +1,12 @@
+.sideBarItem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    height: 46px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-inline-start: 8px;
+    margin-block: 3px;
+    color: #67686D;
+}
