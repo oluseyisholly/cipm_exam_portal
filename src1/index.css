@@ -11,8 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-.ant-steps-progress-icon > span{
-  color: #68B859!important;
-}

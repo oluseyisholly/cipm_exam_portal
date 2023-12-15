@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Layout, Menu, Modal, theme } from 'antd';
+import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import styles from './main.module.css'
 import {ReactComponent as ArrowDown } from '../../svg/angledown.svg';
 import {ReactComponent as NotiBell } from '../../svg/bell.svg';
@@ -20,7 +20,6 @@ import {ReactComponent as Harmbugger} from '../../svg/harmbugger.svg';
 import SideBarItem from './sideBarItem';
 import SideBar from './sideBar';
 import { Button, ConfigProvider, Drawer, Space } from "antd";
-import Modalcontent from '../components/modalContent';
 
 const { Header, Content, Sider } = Layout;
 
@@ -31,7 +30,63 @@ const items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({
   label: `nav ${key}`,
 }));
 
+const sideBarItems1 = [
+    {
+        icon: <Home/>,
+        name: 'Home'
+    },
+    {
+        icon: <Examination/>,
+        name: 'Examination'
+    },
+    {
+        icon: <StatementOfPurpose/>,
+        name: 'Statement Of Purpose'
+    },
+    {
+        icon: <Transcript/>,
+        name: 'Transcript'
+    },
+    {
+        icon: <Induction/>,
+        name: 'Induction'
+    },
+    {
+        icon: <ExamDefferment/>,
+        name: 'Exam Deferment'
+    },
+    
+]
 
+const sideBarItems2 = [
+    {
+        icon: <PayDues/>,
+        name: 'Pay Dues'
+    },
+    {
+        icon: <PaymentHistory/>,
+        name: 'Payment History'
+    },
+]
+
+
+const sideBarItems3 = [
+    {
+        icon: <MyDocument/>,
+        name: 'My Document'
+    },
+]
+
+const sideBarItems4 = [
+    {
+        icon: <ActiveHistory/>,
+        name: 'Active history'
+    },
+    {
+        icon: <StudyCenterLink/>,
+        name: 'Study Center Link'
+    },
+]
 
 const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
   (icon, index) => {
@@ -57,19 +112,9 @@ const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOu
 const CLayout: React.FC = () => {
 
     const [open, setOpen] = useState([false, false]);
-    const [isModalOpen, setIsModalOpen] = useState(true);
-
-    const showModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
 
   const toggleDrawer = (idx: number, target: boolean) => {
     setOpen((p) => {
@@ -121,12 +166,56 @@ const CLayout: React.FC = () => {
                 overflow: 'auto'
                 }}
             >
-                <Button type="primary" onClick={showModal}>
-                    Open Modal
-                </Button>
-               <Modal styles={{ header: {fontWeight: 400, fontSize:'22px'}, body: { paddingBlockStart: '80px'}}} title="Exam Deferment Approval" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                    <Modalcontent/>
-                </Modal> 
+                <div>
+                    {
+                        sideBarItems1.map((item, index) => (
+                            <SideBarItem key={index}  name={item.name} icon={item.icon}/>
+                        ))
+                    }
+                </div>
+                <div>
+                    {
+                        sideBarItems1.map((item, index) => (
+                            <SideBarItem key={index}  name={item.name} icon={item.icon}/>
+                        ))
+                    }
+                </div>
+                <div>
+                    {
+                        sideBarItems1.map((item, index) => (
+                            <SideBarItem key={index}  name={item.name} icon={item.icon}/>
+                        ))
+                    }
+                </div>
+                <div>
+                    {
+                        sideBarItems1.map((item, index) => (
+                            <SideBarItem key={index}  name={item.name} icon={item.icon}/>
+                        ))
+                    }
+                </div>
+                <div>
+                    {
+                        sideBarItems1.map((item, index) => (
+                            <SideBarItem key={index}  name={item.name} icon={item.icon}/>
+                        ))
+                    }
+                </div>
+                <div>
+                    {
+                        sideBarItems1.map((item, index) => (
+                            <SideBarItem key={index}  name={item.name} icon={item.icon}/>
+                        ))
+                    }
+                </div>
+                <div>
+                    {
+                        sideBarItems1.map((item, index) => (
+                            <SideBarItem key={index}  name={item.name} icon={item.icon}/>
+                        ))
+                    }
+                </div>
+                Content
             </Content>
         </div>
       </main>
