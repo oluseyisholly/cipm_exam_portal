@@ -21,6 +21,7 @@ import SideBarItem from './sideBarItem';
 import SideBar from './sideBar';
 import { Button, ConfigProvider, Drawer, Space } from "antd";
 import Modalcontent from '../components/modalContent';
+import Dashboard from '../components/dashboard';
 
 const { Header, Content, Sider } = Layout;
 
@@ -121,12 +122,13 @@ const CLayout: React.FC = () => {
                 overflow: 'auto'
                 }}
             >
-                <Button type="primary" onClick={showModal}>
+                <Dashboard/>
+                {/* <Button type="primary" onClick={showModal}>
                     Open Modal
-                </Button>
-               <Modal styles={{ header: {fontWeight: 400, fontSize:'22px'}, body: { paddingBlockStart: '80px'}}} title="Exam Deferment Approval" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                </Button> */}
+               {/* <Modal styles={{ header: {fontWeight: 400, fontSize:'22px'}, body: { paddingBlockStart: '80px'}}} title="Exam Deferment Approval" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                     <Modalcontent/>
-                </Modal> 
+                </Modal>  */}
             </Content>
         </div>
       </main>

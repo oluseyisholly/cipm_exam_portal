@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
 
 .ant-steps-progress-icon > span{
   color: #68B859!important;

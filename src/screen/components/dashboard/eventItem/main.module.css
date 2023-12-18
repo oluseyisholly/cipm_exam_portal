@@ -1,0 +1,46 @@
+.main {
+
+    display: flex;
+    gap: 12.5px;
+
+
+    & > div:nth-of-type(1) {
+        width: 105px;
+        height: 54px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 2px solid #8DC467;
+        background: #FFF;
+
+
+        & span {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 25px;
+            color: #8DC467;
+        }
+    }
+
+    & > div:nth-of-type(2) {
+        height: 54px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 3px;
+
+        & span {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 25px;
+            color: #335642;
+        }
+
+        & span:last-child{
+            font-weight: 500;
+            line-height: 21px;
+        }
+       
+    }
+}
