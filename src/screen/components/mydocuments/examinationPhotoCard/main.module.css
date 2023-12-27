@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-block-end: 40px;
+
+    & > div {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    & > div >  h1{
+        font-size: 20px;
+        font-weight: 400;
+        color: #020D08;
+    }
+}
+
+.wrapper > section{
+    
+}
+
+
+
+

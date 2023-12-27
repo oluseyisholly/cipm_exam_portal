@@ -5,23 +5,15 @@ import { Breadcrumb, Layout, Menu, Modal, theme } from 'antd';
 import styles from './main.module.css'
 import {ReactComponent as ArrowDown } from '../../svg/angledown.svg';
 import {ReactComponent as NotiBell } from '../../svg/bell.svg';
-import {ReactComponent as Home } from '../../svg/home.svg';
-import {ReactComponent as Examination } from '../../svg/examination.svg';
-import {ReactComponent as StatementOfPurpose } from '../../svg/statementofpurpose.svg';
-import {ReactComponent as Transcript } from '../../svg/transcript.svg';
-import {ReactComponent as Induction } from '../../svg/induction.svg';
-import {ReactComponent as ExamDefferment } from '../../svg/examdeferment.svg';
-import {ReactComponent as PayDues} from '../../svg/paydues.svg';
-import {ReactComponent as MyDocument} from '../../svg/mydocument.svg';
-import {ReactComponent as ActiveHistory} from '../../svg/activityhistory.svg';
-import {ReactComponent as StudyCenterLink} from '../../svg/studycenterlink.svg';
-import {ReactComponent as PaymentHistory} from '../../svg/paymenthistory.svg';
 import {ReactComponent as Harmbugger} from '../../svg/harmbugger.svg';
-import SideBarItem from './sideBarItem';
 import SideBar from './sideBar';
-import { Button, ConfigProvider, Drawer, Space } from "antd";
-import Modalcontent from '../components/modalContent';
-import Dashboard from '../components/dashboard';
+import {  Drawer } from "antd";
+import { useAtom } from 'jotai'
+import { atomWithStorage } from 'jotai/utils'
+import MyDocument from '../components/mydocuments';
+import StudyPack from '../components/mydocuments/studyPack';
+import PastQuestion from '../components/mydocuments/pastQuestions';
+import ExaminationPhotoCard from '../components/mydocuments/examinationPhotoCard';
 
 const { Header, Content, Sider } = Layout;
 
@@ -31,6 +23,9 @@ const items1: MenuProps['items'] = ['1', '2', '3'].map((key) => ({
   key,
   label: `nav ${key}`,
 }));
+
+
+const darkModeAtom = atomWithStorage('darkMode', false);
 
 
 
@@ -56,6 +51,8 @@ const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOu
 );
 
 const CLayout: React.FC = () => {
+
+    const [darkMode, setDarkMode] = useAtom(darkModeAtom)
 
     const [open, setOpen] = useState([false, false]);
     const [isModalOpen, setIsModalOpen] = useState(true);
@@ -116,13 +113,19 @@ const CLayout: React.FC = () => {
             </div>
             <Content
                 style={{
-                padding: 24,
                 margin: 0,
                 minHeight: 280,
                 overflow: 'auto'
                 }}
+                className= {styles.content}
             >
-                <Dashboard/>
+                {/* <StudyPack/> */}
+                <ExaminationPhotoCard/>
+                {/* <PastQuestion/> */}
+                {/* <MyDocument/> */}
+                {/* <h1>Welcome to {darkMode ? 'dark' : 'light'} mode!</h1>
+                <button onClick={() => setDarkMode(!darkMode)}>toggle theme</button> */}
+                {/* <Dashboard/> */}
                 {/* <Button type="primary" onClick={showModal}>
                     Open Modal
                 </Button> */}

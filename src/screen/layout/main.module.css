@@ -79,6 +79,10 @@
     height: 29px;
 }
 
+.content {
+    padding: 24px 60px;
+}
+
 
 
 .mainSideBarItem {
@@ -179,6 +183,10 @@ aside > div > div:last-child{
     .drawer {
         display: block;
 
+    }
+
+    .content {
+        padding: 24px 10px;
     }
 }
 
